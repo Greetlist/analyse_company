@@ -1,0 +1,36 @@
+from sqlalchemy import Column, String, Integer
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+import yaml
+engine = None
+session = None
+mysql_configs = None
+
+def load_configs():
+    global mysql_configs
+    f = open('config/config.yaml', 'r')
+    mysql_configs = yaml.safe_load(f)['mysql']
+
+def set_up_session():
+    global engine, session, mysql_configs
+    engine = create_engine('mysql://{user}:{passwd}@{host}/{database}'.format(**mysql_configs), encoding='utf-8')
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+load_configs()
+set_up_session()
+Base = declarative_base()
+Base.metadata.bind = engine
+
+{% for table in tname_list %}
+class {{ table }}(Base):
+    __tablename__ = '{{ table }}'
+
+    id = Column(Integer, primary_key=True)
+    inst_code = Column(String(64))
+    date = Column(String(64))
+    value = Column(Integer)
+{% endfor %}
+
+Base.metadata.create_all(engine)
