@@ -35,20 +35,9 @@ for name, elist in empty_list_dict.items():
         else:
             total_dict[item] += 1
 
-all_empty_company_code_list = []
-part_empth_company_code_list = []
-
-for name, count in total_dict.items():
-    if count != 3:
-        part_empth_company_code_list.append(name)
-    else:
-        all_empty_company_code_list.append(name)
-
 '''
 删掉所有空或者部分空的公司数据
 '''
 for file_name, _ in total_dict.items():
     for name, location in location_dict.items():
-        #os.remove(os.path.join(location, name + '_' + file_name))
-        print(os.path.join(location, name + '_' + file_name))
-
+        os.remove(os.path.join(location, name + '_' + file_name))

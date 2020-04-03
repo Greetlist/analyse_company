@@ -1,0 +1,196 @@
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "经营活动现金流入小计(万元)"
+FROM data.business_activity_cash_income
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "经营活动现金流出小计(万元)"
+FROM data.business_activity_cash_outcome
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "经营活动产生的现金流量净额(万元)"
+FROM data.business_activity_cash_total
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "投资活动现金流入小计(万元)"
+FROM data.investment_activity_cash_income
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "投资活动现金流出小计(万元)"
+FROM data.investment_activity_cash_outcome
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "投资活动产生的现金流量净额(万元)"
+FROM data.investment_activity_cash_total
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "筹资活动现金流入小计(万元)"
+FROM data.fundraising_activity_cash_income
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "筹资活动现金流出小计(万元)"
+FROM data.fundraising_activity_cash_outcome
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "筹资活动产生的现金流量净额(万元)"
+FROM data.fundraising_activity_cash_total
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "应收票据(万元)"
+FROM data.bill_checkin
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "应收账款(万元)"
+FROM data.funds_checkin
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "存货(万元)"
+FROM data.inventory
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "固定资产(万元)"
+FROM data.fixed_asserts
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "流动资产合计(万元)"
+FROM data.flowable_asserts_total
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "非流动资产合计(万元)"
+FROM data.non_flowable_asserts_total
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "资产总计(万元)"
+FROM data.asserts_total
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "应付票据(万元)"
+FROM data.bill_checkout
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "应付账款(万元)"
+FROM data.funds_checkout
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "流动负债合计(万元)"
+FROM data.flowable_debt_total
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "非流动负债合计(万元)"
+FROM data.non_flowable_debt_total
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "负债合计(万元)"
+FROM data.total_debt
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "营业总收入(万元)"
+FROM data.trading_income_total
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "营业总成本(万元)"
+FROM data.trading_cost_total
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "营业利润(万元)"
+FROM data.trading_profit
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "营业外收入(万元)"
+FROM data.trading_outside_income
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "营业外支出(万元)"
+FROM data.trading_outside_cost
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "利润总额(万元)"
+FROM data.total_profit
+WHERE inst_code = "$company_code"
+ORDER BY date
+
+SELECT
+  UNIX_TIMESTAMP(date) AS "time",
+  value as "净利润(万元)"
+FROM data.pure_profit
+WHERE inst_code = "$company_code"
+ORDER BY date

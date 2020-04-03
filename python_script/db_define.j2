@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer
+from sqlalchemy import Column, String, BigInteger
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -27,10 +27,10 @@ Base.metadata.bind = engine
 class {{ table }}(Base):
     __tablename__ = '{{ table }}'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(BigInteger, primary_key=True)
     inst_code = Column(String(64))
     date = Column(String(64))
-    value = Column(Integer)
+    value = Column(BigInteger)
 {% endfor %}
 
 Base.metadata.create_all(engine)
