@@ -16,4 +16,13 @@
 会准备一个shell脚本，主要是Golang，Python，Grafana，Mysql的安装
 
 # 配置相关
-config文件夹下面有mysql的配置
+python_script/config/config.yaml 为配置文件，现在只有mysql的配置，后面可以再添加其他的配置，这里只是说明配置文件的路径和文件名
+模板如下:
+```
+mysql:
+  host: localhost
+  port: 3306
+  user: your_account
+  passwd: your_password
+  database: your_database_name
+```
