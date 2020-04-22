@@ -10,7 +10,8 @@ table_defined_module = None
 def read_single_csv(file_location, csv_type):
     column_list = ['报告日期'] + list(TABLE_LIST[csv_type].keys())
     #转置矩阵取所有关心的列
-    data_df = pd.read_csv(file_location, encoding='gbk').set_index('报告日期').T
+    data_df = pd.read_csv(file_location, encoding='gbk').dropna(axis=1).dropna(axis=0)
+    data_df = data_df.set_index('报告日期').T
     data_df = data_df.reset_index().rename(columns={'index':'报告日期'})
     data_df = data_df.fillna(0)
     return data_df[column_list]
