@@ -2,7 +2,7 @@
 SELECT
   UNIX_TIMESTAMP(date) AS "time",
   value as "{{ item[0] }}"
-FROM data.{{ item[1] }}
+FROM datas.{{ item[1] }}
 WHERE inst_code = "$company_code"
 ORDER BY date
 {% endfor %}
